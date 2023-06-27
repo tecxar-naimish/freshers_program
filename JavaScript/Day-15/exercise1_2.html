@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-15 Excercise-1</title>
+</head>
+
+<body>
+    <script>
+        //1
+        class Animal {
+            constructor(name, age, color, legs) {
+                this.name = name;
+                this.age = age;
+                this.color = color;
+                this.legs = legs;
+            }
+            getInfo() {
+                return `Name : ${this.name} \nAge : ${this.age} \nColor : ${this.color} \nLegs : ${this.legs}`
+            }
+            set setName(name) {
+                this.name = name;
+            }
+            set setAge(age) {
+                this.age = age;
+            }
+            set setColor(color) {
+                this.color = color;
+            }
+            set setLegs(legs) {
+                this.legs = legs;
+            }
+        }
+        let animal = new Animal('King', 2, 'Black', 4);
+        console.log(animal);
+        animal.setName = 'Tom';
+        animal.setAge = '4';
+        animal.color = 'Brown';
+        animal.legs = 4;
+        console.log(animal.getInfo());
+
+
+        //2
+        class Cat extends Animal {
+            constructor(name, age, color, legs, eyeColor) {
+                super(name, age, color, legs)
+                this.eyeColor = eyeColor;
+            }
+        }
+
+        let cat = new Cat('Kitty', 2, 'Gray', 4, 'Brown');
+        console.log(cat);
+
+        class Dog extends Animal {
+            constructor(name, age, color, legs, breed) {
+                super(name, age, color, legs);
+                this.breed = breed;
+            }
+        }
+
+        let dog = new Dog('Coco', 2, 'White', 4, 'German Shepard');
+        console.log(dog);
+
+
+        //Excercise-2
+        //1
+        class Pet extends Animal {
+            constructor(name, age, color, legs, breed) {
+                super(name, age, color, legs);
+                this.breed = breed;
+            }
+
+            getInfo() {
+                return super.getInfo() + `\nBreed :${this.breed}`
+            }
+
+            woof() {
+                return 'woof woof!';
+            }
+        }
+
+        let pet = new Pet('Belly', 2, 'Black', 4, 'German Shepard');
+        console.log(pet.getInfo());
+        console.log(pet.woof());
+    </script>
+</body>
+
+</html>

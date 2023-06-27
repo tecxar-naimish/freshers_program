@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-03</title>
+</head>
+
+<body>
+    <script>
+        // *****Exercise-1*****
+        //toLocaleDateString('en-GB')
+
+        //1
+        let firstName = "abc",
+            lastName = "xyz",
+            country = "India",
+            city = "Ahmedabad",
+            age1 = 21,
+            isMarried = "false",
+            year = 2023;
+
+        console.log(typeof (firstName));
+        console.log(typeof (lastName));
+        console.log(typeof (country));
+        console.log(typeof (city));
+        console.log(typeof (age1));
+        console.log(typeof (isMarried));
+        console.log(typeof (year));
+
+        //2
+        console.log(typeof ('10') == typeof (10));
+
+        //3
+        console.log(parseInt('9.8') == typeof (10));
+
+        //4
+        console.log(4 > 3);
+        console.log(4 >= 3);
+        console.log(4 < 3);
+        console.log(4 <= 3);
+        console.log(4 == 4);
+        console.log(4 === 4);
+        console.log(4 != 4);
+        console.log(4 !== 4);
+        console.log(4 != '4');
+        console.log(4 == '4');
+        console.log(4 === '4');
+        console.log('python'.length != 'jargon'.length);
+
+        //5
+        console.log(4 > 3 && 10 < 12);
+        console.log(4 > 3 && 10 > 12);
+        console.log(4 > 3 || 10 < 12);
+        console.log(4 > 3 || 10 > 12);
+        console.log(!(4 > 3));
+        console.log(!(4 < 3));
+        console.log(!(false));
+        console.log(!(4 > 3 && 10 < 12));
+        console.log(!(4 > 3 && 10 > 12));
+        console.log(!(4 === '4'));
+        console.log(!("python".includes("on") && "dragon".includes("on")));
+
+        //6
+        const date = new Date();
+        console.log(date.getFullYear());
+        console.log(date.getMonth() + 1);
+        console.log(date.getDate());
+        console.log(date.getDay());
+        console.log(date.getHours());
+        console.log(date.getMinutes());
+        console.log(date.getTime() / 1000);
+
+
+        // *****Exercise-2*****
+        //1
+
+        //  let base = prompt('Enter base: ');
+        //  let height = prompt('Enter height: ');
+        //  let area = 0.5 * base * height;
+        //  console.log(area); 
+
+        //2
+
+        // let sideA = prompt('Enter side A: ');
+        // let sideB = prompt('Enter side B: ');
+        // let sideC = prompt('Enter side C: ');
+        // let perimeter = parseFloat(sideA) + parseFloat(sideB) + parseFloat(sideC);
+        // console.log(perimeter);
+
+        //3
+        // let length = prompt('Enter length: ');
+        // let width = prompt('Enter width: ');
+        // let perimeter1 = 2 * (parseFloat(length) + parseFloat(width));
+        // let area = parseFloat(length) * parseFloat(width);
+        // console.log(perimeter1, area);
+
+        //4
+        // let radius = prompt('Enter radius: ');
+        // let pi = Math.PI  
+        // let area1 = pi * parseFloat(radius) ** 2;
+        // let circumference = 2 * pi * parseFloat(radius);
+        // console.log(area1, circumference);
+
+        //5
+        // let name = prompt('Enter your name: ');
+        // name.length > 7
+        //     ? console.log('your name is long')
+        //     : console.log('your name is short');
+
+        //6
+        // let fName = 'Asabeneh',
+        //     lName = 'Yetayeh';
+        // let length1 = fName.length,
+        //     length2 = lName.length;
+        // if (length1 > length2) {
+        //     console.log(`Your first name ${fName} is longer than your family name ${lName}`
+        //     );
+        // }
+        // else if (length2 > length1) {
+        //     console.log(`Your family name ${lName} is longer than your first name ${fName}`
+        //     );
+        // }
+        // else {
+        //     console.log(`Your first name ${fName} and your family name ${lName} are equal in length`
+        //     );
+        // }
+
+        //7
+        // let myAge = 22,
+        //     yourAge = 35;
+
+        // if (myAge > yourAge) {
+        //     console.log(`I am ${myAge - yourAge} years older than you`);
+        // } else if (yourAge > myAge) {
+        //     console.log(`You are ${yourAge - myAge} years older than me`);
+        // } else {
+        //     console.log(`we are the same age`);
+        // }
+
+
+        //8
+        // let yourBirthYear = parseFloat(prompt('Enter the year you were born: '));
+        // let age = new Date().getFullYear() - yourBirthYear;
+        // age >= 18
+        //     ? console.log(`You are ${age}. You are allowed to drive.`)
+        //     : console.log(`You are ${age}. You will be allowed to drive in ${18 - age} years.`);
+
+        //9
+        // let age = parseFloat(prompt('Enter your age: '));
+        // let remainingYears = 100 - age;
+        // let remainingSeconds = remainingYears * 365.25 * 24 * 60 * 60;
+        // console.log(`You have lived ${age * 365.25 * 24 * 60 * 60} seconds. You have ${remainingSeconds} seconds more to live reach 100 years`);
+
+        //10
+        // let dateInfo = new Date();
+        // let year1 = dateInfo.getFullYear();
+        // let month = dateInfo.getMonth();
+        // let date1 = dateInfo.getDate();
+        // let hours = dateInfo.getHours();
+        // let minutes = dateInfo.getMinutes();
+        // // Solution 1
+        // console.log(`${year1}-${month}-${date1} ${hours}:${minutes}`);
+        // // solution 2
+        // console.log(`${date1}-${month}-${year1} ${hours}:${minutes}`);
+        // // solution 3
+        // console.log(`${date1}/${month}/${year1} ${hours}:${minutes}`);
+
+        //11
+
+        let dateInfo = new Date();
+        let year2 = dateInfo.getFullYear();
+        let month = dateInfo.getMonth();
+        let date2 = dateInfo.getDate();
+        let hours = dateInfo.getHours();
+        let minutes = dateInfo.getMinutes();
+
+        function format(a) {
+            if (a < 10) {
+                return (a = `0${a}`);    
+            }
+            return a;
+        }
+        let formatHours = format(hours);
+        let formatMinutes = format(minutes);
+        console.log(`${year2}-${month}-${date2} ${formatHours}:${formatMinutes}`);
+
+
+    </script>
+</body>
+
+</html>

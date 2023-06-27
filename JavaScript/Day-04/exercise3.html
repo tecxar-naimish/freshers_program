@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-04 Exercise-3</title>
+</head>
+
+<body>
+    <script>
+
+        //1
+
+        // let month = prompt("enter month to check number of days");
+        // switch (month) {
+        //     case "january":
+        //     case "march":
+        //     case "may":
+        //     case "july":
+        //     case "august":
+        //     case "october":
+        //     case "december":
+        //         console.log(`${month} has 31 days`)
+        //         break;
+        //     case "april":
+        //     case "june":
+        //     case "september":
+        //     case "november":
+        //         console.log(`${month} has 30 days`)
+        //         break;
+        //     case "february":
+        //         console.log(`${month} has 29 days`)
+        //         break;
+        //     default:
+        //         console.log("invalid month entered");
+        // }
+
+
+        //2
+        let month = prompt("Enter a month: ").toLowerCase();
+        let daysCount;
+
+        // check if it is leap year 
+        let d = new Date();
+        let year = d.getFullYear();
+
+        if (month == "february") {
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+                daysCount = 29;
+            }
+            else {
+                daysCount = 28;
+            }
+        } else {
+            switch (month) {
+                case "january":
+                case "march":
+                case "may":
+                case "july":
+                case "august":
+                case "october":
+                case "december":
+                    daysCount = 31;
+                    break;
+
+                case "april":
+                case "june":
+                case "september":
+                case "november":
+                    daysCount = 30;
+                    break;
+            }
+        }
+        console.log(`${month} has ${daysCount} days`);
+    </script>
+</body>
+
+</html>

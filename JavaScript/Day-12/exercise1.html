@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-12 Excercise-1</title>
+</head>
+
+<body>
+    <script>
+        //1
+        let sentence = 'He earns 4000 euro from salary per month, 10000 euro annual bonus, 5500 euro online courses per month.';
+
+        let pattern = /\d+/g;
+        let income = sentence.match(pattern);
+        let parsing = income.map((p) => Number(p));
+        let annualIncome = parsing.reduce((a, b) => a + b);
+        console.log(annualIncome);
+
+        //2
+        points = ['201', '2', '-4', '-3', '-10', '0', '4', '8']
+        let numPattern = new RegExp(/\-?[0-9]+/, 'g');
+        let extractedPoints = points.map(x => parseFloat(x.match(numPattern)[0])).sort((a, b) => a - b);
+        let distance = Math.abs(extractedPoints[extractedPoints.length - 1] - extractedPoints[0]);
+        console.log(distance);
+
+
+        //3
+        let is_valid_variable = (varName) => {
+            let pattern = /^[$|_|a-z|A-Z][1-9|a-z|A-Z|_]*?/
+            console.log(pattern.test(varName));
+        }
+        is_valid_variable('nameOfStud');
+    </script>
+</body>
+
+</html>

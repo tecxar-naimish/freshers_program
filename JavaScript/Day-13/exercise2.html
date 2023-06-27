@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-14 Excercise-1</title>
+</head>
+
+<body>
+    <script>
+        //1
+        console.assert(10 > 2 * 10, "Incorrect");
+
+        //2
+        console.warn("Warning..!");
+
+        //3
+        console.error("This is an error..!");
+
+        //4
+        let num = [1, 2, 3, 4, 5];
+
+        console.time("While Loop .....");
+        let i = 0;
+        while (i < num.length) {
+            console.log(num[i]);
+            i++;
+        }
+        console.timeEnd("While Loop .....");
+
+        console.time("For Loop .....");
+        for (let i = 0; i < num.length; i++) {
+            console.log(num[i]);
+        }
+        console.timeEnd("For Loop .....");
+
+        console.time("For in ....");
+        for (let i of num) {
+            console.log(i);
+        }
+        console.timeEnd("For in ....");
+
+        console.time("ForEach Loop ....")
+        num.forEach((i) => console.log(i));
+        console.timeEnd("ForEach Loop ....");
+    </script>
+</body>
+
+</html>

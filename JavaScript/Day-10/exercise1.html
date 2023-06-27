@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-10 Excercise-1</title>
+</head>
+
+<body>
+    <script>
+        //1
+        const emptySet = new Set();
+        console.log(emptySet);
+
+        //2
+        const setZeroToTen = new Set();
+        for (let i = 0; i <= 10; i++) {
+            setZeroToTen.add(i);
+        }
+        console.log(setZeroToTen);
+
+        //3
+        setZeroToTen.delete(0);
+        console.log(setZeroToTen);
+
+        //4
+        setZeroToTen.clear();
+        console.log(setZeroToTen);
+
+        //5
+        const lang = ['HTML', 'CSS', 'JAVASCRIPT'];
+        const langSet = new Set(lang);
+        langSet.forEach((i) => console.log(i));
+
+        //6
+        const arrCountry = ['Finland', 'Sweden', 'Norway']
+        const countries = new Map();
+        for (let i of arrCountry) {
+            countries.set(i, i.length);
+        }
+        console.log(countries);
+    </script>
+</body>
+
+</html>

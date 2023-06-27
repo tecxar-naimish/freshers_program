@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-09 Excercise-1</title>
+</head>
+
+<body>
+    <script>
+        const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand'];
+        const products = [
+            { product: 'banana', price: 3 },
+            { product: 'mango', price: 6 },
+            { product: 'potato', price: ' ' },
+            { product: 'avocado', price: 8 },
+            { product: 'coffee', price: 10 },
+            { product: 'tea', price: '' },
+        ];
+
+        //1
+        const totalPrice = products.map((i) => i.price).filter((i) => i > 0).reduce((a, b) => a + b, 0);
+        console.log(totalPrice);
+
+        //2
+        const sumOfPrice = products.reduce((sum, obj) => {
+            return typeof obj.price != 'string' ? sum + obj.price : sum
+        }, 0);
+        console.log(sumOfPrice);
+
+        //3
+        const categorizeCountries = (arr) => {
+            let count = arr.filter((i) => i.includes('land') || i.includes('ia') || i.includes('island') || i.includes('stan'));
+            return count
+        }
+        console.log(categorizeCountries(countries));
+
+        //4
+        let frequentLetterList = countries.map((c) => c[0]);
+        // console.log(frequentLetterList);
+        let count = frequentLetterList.reduce((obj, cur) => {
+            obj[cur] = (obj[cur] || 0) + 1;
+            return obj;
+        }, {})
+        console.log(count);
+
+        //5
+        let getFirstTenCountries = (arr) => arr.filter((c) => arr.indexOf(c) < 10);
+        console.log(getFirstTenCountries(countries));
+
+        //6
+        let getLastTenCountries = (arr) => arr.filter((c) => arr.indexOf(c) > arr.length - 11);
+        console.log(getLastTenCountries(countries));        
+    </script>
+</body>
+
+</html>

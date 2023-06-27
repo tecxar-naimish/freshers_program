@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-09 Excercise-1</title>
+</head>
+
+<body>
+    <script>
+        const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand'];
+        const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook'];
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const products = [
+            { product: 'banana', price: 3 },
+            { product: 'mango', price: 6 },
+            { product: 'potato', price: ' ' },
+            { product: 'avocado', price: 8 },
+            { product: 'coffee', price: 10 },
+            { product: 'tea', price: '' },
+        ];
+
+        //3 
+        countries.forEach((i) => console.log(i));
+
+        //4
+        names.forEach((i) => console.log(i));
+
+        //5
+        numbers.forEach((i) => console.log(i));
+
+        //6
+        const upperCaseCountries = countries.map((i) => i.toUpperCase());
+        console.log("Countries to uppercase...>>>", upperCaseCountries);
+
+        //7
+        const lenCountries = countries.map((i) => i.length);
+        console.log("Length Of Countries ...>>>", lenCountries);
+
+        //8
+        const squreNum = numbers.map((i) => i * i);
+        console.log("Squre Of Numbers...>>>", squreNum);
+
+        //9
+        const upperCaseName = names.map((i) => i.toUpperCase());
+        console.log("Name to upppercase...>>>", upperCaseName);
+
+        //10
+        const productPrices = products.map((i) => `${i.product}:${i.price}`);
+        console.log(productPrices);
+
+        //11
+        const countriesWithLand = countries.filter((i) => i.toLowerCase().includes('land'));
+        console.log(countriesWithLand);
+
+        //12
+        const countriesWithSixchars = countries.filter(c => c.length === 6);
+        console.log(countriesWithSixchars);
+
+        //13
+        const countriesWithSixcharsMore = countries.filter((i) => i.length >= 6);
+        console.log(countriesWithSixcharsMore);
+
+        //14
+        const countriesStartingWithE = countries.filter((i) => i.startsWith('E'));
+        console.log(countriesStartingWithE);
+
+        //15
+        const pricesWithValues = products.filter((i) => i.price > 0)
+        console.log(pricesWithValues);
+
+        //16
+        const myArray = [1, 2, 'abc', 'xyz', true];
+        const getOnlyString = (arr) => {
+            return arr.filter((i) => typeof (i) == 'string');
+        }
+        console.log(getOnlyString(myArray));
+
+        //17
+        const sumOfNum = numbers.reduce((a, b) => a + b, 0);
+        console.log(sumOfNum);
+
+        //18
+        let joinCountries = countries.reduce((a, c) => (a + "," + c));
+        console.log(joinCountries);
+
+        //19 Differnce between some() and every()
+
+        //20
+        const namesWithGreaterSevenLen = names.some((i) => i.length > 7);
+        console.log(namesWithGreaterSevenLen);
+
+        //21
+        const allContainLand = countries.every((i) => i.toLowerCase().includes('land'));
+        console.log(allContainLand);
+
+        //22 Difference between find() and findIndex()
+
+        //23
+        const sixCharsCountry = countries.find((i) => i.length === 6);
+        console.log(sixCharsCountry);
+
+        //24
+        const indexOfSixCharsCountry = countries.findIndex((i) => i.length === 6);
+        console.log(indexOfSixCharsCountry);
+
+        //25
+        const indexOfNorway = countries.findIndex((i) => i === 'Norway');
+        console.log(indexOfNorway);
+
+        //26
+        const indexOfRussia = countries.findIndex((i) => i === 'Russia');
+        console.log(indexOfRussia);
+    </script>
+</body>
+
+</html>

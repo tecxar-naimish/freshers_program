@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-08 Excercise-1</title>
+</head>
+
+<body>
+    <script>
+        //1
+        const dog = {};
+
+        //2
+        console.log(dog);
+
+        //3
+        dog['name'] = 'Barky';
+        dog['age'] = 2;
+        dog['legs'] = 4;
+        dog['color'] = 'red';
+        dog['bark'] = () => 'Woof Woof';
+
+        console.log(dog);
+
+        //4
+        let { name, legs, color, age, bark } = dog;
+        console.log(`name = ${name}, legs = ${legs}, color = ${color}, age = ${age}, bark = ${bark()}`);
+
+        //5
+        dog['breed'] = 'German shepherd';
+        dog['getDogInfo'] = () => {
+            console.log(name);
+            console.log(age);
+            console.log(dog.breed);
+        }
+        dog.getDogInfo();
+
+    </script>
+</body>
+
+</html>

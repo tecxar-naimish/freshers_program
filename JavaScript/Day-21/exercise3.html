@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-21 Excercise-3</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Javascript Challenge <span>2023</span></h1>
+        <h2>30DaysOfJavaScript Challenge</h2>
+        <p></p>
+        <ul>
+            <li>30DaysOfPython Challenge Done</li>
+            <li>30DaysOfJavaScript Challenge Ongoing</li>
+            <li>30DaysOfReact Challenge Coming</li>
+            <li>30DaysOfFullStack Challenge Coming</li>
+            <li>30DaysOfDataAnalysis Challenge Coming</li>
+            <li>30DaysOfReactNative Challenge Coming</li>
+            <li>30DaysOfMachineLearning Challenge Coming</li>
+        </ul>
+    </div>
+    <script>
+
+        let body = document.querySelector('body');
+        body.style.textAlign = 'center';
+
+        let span = document.querySelector('span')
+        span.style.fontSize = '100px';
+
+        //1
+        let colorChange = () => {
+            let alphanums = '0123456789abcdef';
+            let colorArr = [];
+            for (let i = 0; i < 6; i++) {
+                let index = Math.floor(Math.random() * 15);
+                colorArr.push(alphanums[index]);
+            }
+            return '#' + colorArr.join('');
+        };
+        setInterval(() => {
+            span.style.color = colorChange();
+        }, 1000)
+
+
+        //2
+        const h2 = document.querySelector('h2');
+        h2.style.textDecoration = "underline";
+        let getDate = () => {
+            let d = new Date();
+
+            let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+            let monthIndex = d.getMonth();
+            let year = d.getFullYear();
+            let date = d.getDate();
+
+            date = date < 10 ? '0' + date.toString() : date;
+
+            return `${months[monthIndex]} ${date}, ${year}  ${d.toLocaleTimeString()}`;
+        }
+
+        let date = document.querySelector('p');
+        date.textContent = getDate();
+
+        date.style.margin = 'auto';
+        date.style.padding = '6px';
+        date.style.fontSize = '30px';
+        date.style.width = '40%';
+
+        setInterval(() => {
+            date.style.backgroundColor = colorChange();
+        }, 1000);
+
+
+        //3
+        let listItems = document.querySelectorAll('li');
+
+        for (let item of listItems) {
+            item.style.listStyleType = 'none';
+            item.style.padding = '8px';
+            item.style.margin = '6px';
+            item.style.textAlign = 'left';
+            item.style.fontSize = '30px';
+        }
+
+        for (const item of listItems) {
+            if (item.textContent.endsWith('Done')) {
+                item.style.backgroundColor = 'green';
+            }
+            else if (item.textContent.endsWith('Ongoing')) {
+                item.style.backgroundColor = 'yellow';
+            }
+            else {
+                item.style.backgroundColor = 'red';
+            }
+        }
+    </script>
+</body>
+
+</html>

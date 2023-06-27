@@ -1,0 +1,68 @@
+body {
+    text-align: center;
+    color: #252525;
+    background-color: #eee;
+}
+
+h1 {
+    font-size: 30px;
+    color: #FFA500;
+}
+
+button {
+    margin-left: 10px;
+    text-transform: uppercase;
+}
+
+.input-container {
+    background: #f9f9f9;
+    width: 100%;
+    padding: 20px;
+}
+
+.brief {
+    margin-top: 20px;
+}
+
+.wrapper {
+    font-size: 20px;
+    width: 100%;
+    display: grid;
+    gap: 16px;
+    padding: 20px;
+}
+
+.component {
+    display: flex;
+    justify-content: center;
+}
+
+progress {
+    width: 40%;
+    height: 25px;
+    margin-left: 20px;
+    appearance: none;
+    border: unset;
+}
+
+progress::-moz-progress-bar {
+    background: #FFA500;
+}
+
+progress::-webkit-progress-value {
+    background: #FFA500;
+}
+
+progress::-webkit-progress-bar {
+    background: gray;
+}
+
+.description {
+    text-align: left;
+    font-size: 20px;
+    width: 10rem;
+}
+
+.count {
+    width: 150px;
+}

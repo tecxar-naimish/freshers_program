@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./Exercise-2/countries.js"></script>
+    <script src="./Exercise-2/web_techs.js"></script>
+</head>
+
+<body>
+    <script>
+        //1
+        const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
+
+        //1(1)
+        ages.sort();
+        console.log(ages);
+        const min = ages[0];
+        const max = ages[ages.length - 1];
+        console.log(`Minimum Age is = ${min} \nMaximum Age is = ${max}`);
+
+        //1(2)
+        const ages1 = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
+        let len = ages1.length;
+        let median = (ages1[parseInt(len / 2) - 1] + ages1[parseInt(len / 2)]) / 2;
+        console.log(median);
+
+        //1(3)
+        const average = (ages[0] + ages[1] + ages[2] + ages[3] + ages[4] + ages[5] + ages[6] + ages[7] + ages[8] + ages[9]) / len;
+        console.log(average);
+
+        //1(4)
+        let range = max - min;
+        console.log("Range of ages: ", range);
+
+        //1(5)
+        Math.abs(min - average) < Math.abs(max - average) ? console.log("Data is left skewed") : console.log('Data is right skewed!');
+
+        //1(6)
+        let first10Countries = countries.slice(0, 10);
+        console.log(first10Countries);
+
+        //2
+        if (countries.length % 2 === 0) {
+            let firstMid = (countries.length) / 2 - 1;
+            let secondMid = (countries.length) / 2;
+            console.log(countries[firstMid], countries[secondMid]);
+        }
+        else {
+            console.log(countries[parseInt(countries.length / 2) - 1]);
+        }
+
+        //3
+        countries.shift();
+        // now convert into equal halves
+        console.log(countries);
+        let firstHalf = countries.splice(0, countries.length / 2);
+        let anotherHalf = countries.splice(0, countries.length);
+        console.log(firstHalf);
+        console.log(anotherHalf);
+    </script>
+</body>
+
+</html>

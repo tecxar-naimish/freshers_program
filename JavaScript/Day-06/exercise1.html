@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-06 Exercise-1</title>
+</head>
+
+<body>
+    <script>
+        //1 Using For Loop
+        for (let i = 0; i <= 10; i++) {
+            console.log(i);
+        }
+        //1 Using While Loop
+        let i = 0;
+        while (i <= 10) {
+            console.log(i);
+            i++
+        }
+        //1 Using Do While Loop
+        let a = 0;
+        do {
+            console.log(a);
+            a++
+        } while (a <= 10)
+
+
+        //2 Using For Loop
+        for (let i = 10; i >= 0; i--) {
+            console.log(i);
+        }
+        //2 Using While Loop
+        let b = 10;
+        while (b >= 0) {
+            console.log(b);
+            b--
+        }
+        //2 Using Do While Loop
+        let x = 10;
+        do {
+            console.log(x);
+            x--;
+        } while (x >= 0);
+
+        //3
+        let n = 5;
+        for (let i = 0; i <= n; i++) {
+            console.log(i);
+        }
+
+        //4
+        for (i = 1; i <= 7; i++) {
+            console.log("#".repeat(i));
+        }
+
+        // for (let i = 0; i <= 7; i++) {
+        //     for (let j = 0; j <= i; j++) {
+        //         document.write("#");
+        //     }
+        //     document.write("<br>");
+        // }
+
+        // 5 
+        for (let i = 0; i < 11; i++) {
+            console.log(`${i} x ${i} = ${i * i}`);
+        }
+
+        // 6 
+        console.log("i\ti^2\ti^3");
+        for (let i = 0; i < 11; i++) {
+            console.log(`${i}\t${i ** 2}\t${i ** 3}`);
+        }
+
+        //7 Even Number between 0 to 100
+        for (let i = 0; i <= 100; i++) {
+            if (i % 2 == 0) {
+                console.log(i);
+            }
+        }
+
+        //8 Odd Number between 0 to 100
+        for (let i = 0; i <= 100; i++) {
+            if (i % 2 !== 0) {
+                console.log(i);
+            }
+        }
+
+        //9 Prime Number between 0 to 100
+        let count = 0;
+        for (let number = 2; number <= 100; number++) {
+            for (let j = 1; j <= number; j++) {
+                if (number % j == 0) {
+                    count++
+                }
+            }
+            if (count == 2) {
+                console.log(number)
+            }
+            count = 0;
+        }
+
+        // 10 
+        let sum = 0;
+        for (let i = 0; i < 101; i++) {
+            sum += i;
+        }
+        console.log("Sum of 0-100: ", sum);
+
+        //11
+        let sumEven = 0, sumOdd = 0;
+        for (let i = 0; i <= 100; i++) {
+            if (i % 2 == 0) {
+                sumEven += i;
+            }
+            else {
+                sumOdd += i;
+            }
+        }
+        console.log(`Sum Of Even Number =>${sumEven} \nSum Of Odd Number =>${sumOdd}`);
+
+        //12
+
+        let sumOfEven = 0, sumOfOdd = 0;
+        for (let i = 0; i <= 100; i++) {
+            if (i % 2 == 0) {
+                sumOfEven += i;
+            }
+            else {
+                sumOfOdd += i;
+            }
+        }
+        console.log([sumOfEven, sumOfOdd]);
+
+        //13
+        let randomNums = [];
+        for (let i = 0; i < 5; i++) {
+            randomNums.push(parseInt(Math.PI * Math.random() * 100 + 3));
+        }
+        console.log(randomNums);
+
+        //14
+        let randomNumbers = [];
+        for (let i = 0; i < 5; i++) {
+            let randNum = parseInt(Math.PI * Math.random() * 100 + i)
+            if (randomNumbers.indexOf(randNum) == -1) {
+                randomNumbers.push(randNum);
+            }
+        }
+        console.log(randomNumbers);
+
+        //15
+        let alphabets = 'abcdefghijklmnopqrstuvwxyz';
+        let randoms = [];
+        for (let i = 0; i <=5; i++) {
+            if (i % 2 == 0) {
+                randoms.push(i);
+            }
+            else {
+                // console.log(alphabets[parseInt(Math.random() * 25)]);
+                randoms.push(alphabets[parseInt(Math.random() * 25)])
+            }
+        }
+        console.log(randoms.join(''));
+    </script>
+</body>
+
+</html>

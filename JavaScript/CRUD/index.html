@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>CRUD Application</title>
+</head>
+
+<body style="color:white; background-color: black;">
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="display-5 mb-5"><strong>To-Do List</strong></h1>
+        </div>
+        <div class="main row justify-content-center">
+            <form action="#" id="user-form" class="row justify-content-center mb-4" autocomplete="off">
+                <div class="col-10 col-md-8 mb-3">
+                    <label for="name">Title</label>
+                    <input class="form-control" id="title" type="text" placeholder="Enter Title">
+                </div>
+                <div class="col-10 col-md-8 mb-3">
+                    <label class="form-label">Status</label>
+                    <select class="form-select" id="status">
+                        <option value="Pending">Pending</option>
+                        <option value="Done">Done</option>
+                    </select>
+                </div>
+                <div class="col-10 col-md-8 mb-3">
+                    <label for="date">Date</label>
+                    <input class="form-control" id="date" type="date">
+                </div>
+                <div class="col-10 col-md-8">
+                    <button class="btn btn-success" id="btnSave">Save</button>
+                    <button class="btn btn-danger mx-2" id="btnSave" type="reset">Cancel</button>
+                </div>
+            </form>
+            <div class="col-12 col-md-10 mt-5">
+                <table class="table table-striped table-hover table-dark">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-data">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="./crud.js"></script>
+</body>
+
+</html>

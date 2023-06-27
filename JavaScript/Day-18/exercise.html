@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-18 Excercise</title>
+</head>
+
+<body>
+    <script>
+        // let promise = new Promise((resolve, reject) => {
+        //     resolve('Promise Resolved Successfully...!');
+        //     reject('Something Went Wrong...!');
+        // })
+            
+        // promise
+        //     .then((res) => console.log(res))
+        //     .catch((err) => console.log(err));
+
+        //1
+        const countriesAPI = 'https://restcountries.com/v2/all'
+        fetch(countriesAPI)
+            .then(async (res) => {
+                let data = await res.json();
+                data.forEach((e) => {
+                    //for language
+                    let lang = [];
+                    e.languages.forEach((l) => {
+                        lang.push(l.name);
+                    })
+                    console.log(`country:${e.name} \ncapital:${e.capital} \nlanguages:${lang} \npopulation${e.population}`)
+                });
+            })
+            .catch((err) => console.log(err));
+
+        //2
+        let catNames = [];
+        const catsAPI = 'https://api.thecatapi.com/v1/breeds'
+        fetch(catsAPI)
+            .then(async (res) => {
+                let data = await res.json();
+                data.forEach((cat) => {
+                    catNames.push(cat.name);
+                })
+                console.log(catNames);
+            })
+            .catch(error => console.log(error));
+
+        //3(2)
+        fetch(countriesAPI)
+            .then(async (res) => {
+                let data = await res.json();
+                let largeCountry = 0;
+                let largestCountry = [];
+                let large = data.sort((a, b) => b.area - a.area);
+                let l = large.slice(0, 10);
+                let arr = [];
+                l.forEach((e) => {
+                    arr.push(`${e.name} : ${e.area}`);
+                })
+                console.log(arr);
+            })
+            .catch((err) => console.log(err));
+
+        //3(3)
+        fetch(countriesAPI)
+            .then(async (res) => {
+                let countries = await res.json();
+                let languages = [];
+                countries.forEach((country) => {
+                    country.languages.forEach((language) => {
+                        if (languages.indexOf(language.name) === -1) {
+                            languages.push(language.name);
+                        }
+                    })
+                })
+                console.log('Total Language...', languages.length);
+            })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataType</title>
+</head>
+
+<body style="text-align: center;">
+    <h1 style="color:crimson;">DataType</h1>
+    <h2>Primitive DataType</h2>
+    <script>
+        var num = 20;
+        var name = "Naimish";
+        var bool = true;
+        var empty = null;
+        var notDefined;
+
+        document.write(`Number :- ${num} <br>`);
+        document.write(`String :- ${name} <br>`);
+        document.write(`Boolean :- ${bool} <br>`);
+        document.write(`Null :- ${empty} <br>`);
+        document.write(`Undefined :-${typeof (notDefined)}`);
+    </script>
+
+    <h2>Non-Primitive DataType</h2>
+    <script>
+        let arr = [1, 2, 3];
+        let obj = {
+            Name: "Naimish",
+            Age: 21,
+        };
+        obj.City = "Rajkot";
+        console.log(arr);
+        console.log(obj);
+        document.write(`<h3>Array</h3>  :-${arr} <br>`);
+        document.write(`<h3>Object</h3> Name :- ${obj.Name}<br> Age:- ${obj.Age} <br>`);
+    </script>
+
+</body>
+
+</html>

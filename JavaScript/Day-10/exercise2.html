@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-10 Excercise-2</title>
+</head>
+
+<body>
+    <script>
+        //1
+        const a = [4, 5, 8, 9];
+        const b = [3, 4, 5, 7];
+        const c = [...a, ...b];
+        const union = new Set(c);
+        console.log("A Union B = ", union);
+
+        //2
+        const A = new Set(a);
+        const B = new Set(b);
+
+        const i = a.filter((i) => B.has(i));
+        const intersection = new Set(i);
+        console.log("A Intersection B = ", intersection);
+
+        //3
+        const d = a.filter((i) => !B.has(i));
+        const difference = new Set(d)
+        console.log("A Difference = ",difference);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+.main-scoreboard-wrapper {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    gap: 16px;
+}
+
+.main-scoreboard {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    width: 90%;
+    background: #E5C9C5;
+    text-transform: uppercase;
+    padding: 16px;
+}
+
+.error-msg {
+    font-weight: 500;
+}
+
+.player-name {
+    font-size: large;
+    font-weight: 500;
+}
+
+.time-stamp {
+    color: gray;
+    font-size: 15px;
+}
+
+.scoreboard-btn-container {
+    margin: 16px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-action {
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}

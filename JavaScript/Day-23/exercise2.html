@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-23 Exercise-2</title>
+
+    <style>
+        #key {
+            padding: 4px;
+            margin: auto 0;
+            font-size: large;
+            width: 50%;
+            border: 2px solid black;
+            border-radius: 25px;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            margin-right: auto;
+            margin-left: auto;
+            text-align: center;
+            box-shadow: 5px 5px 5px black;
+        }
+
+        #keyCode {
+            padding: 4px;
+            font-size: large;
+            width: 60px;
+            border: 2px solid black;
+            border-radius: 25px;
+            margin-right: auto;
+            margin-left: auto;
+            text-align: center;
+            box-shadow: 2px 3px;
+        }
+
+        .color {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div id="key">Press Any Keyboard Key</div>
+        <div id="keyCode"></div>
+    </div>
+    <script>
+        let keyName = document.getElementById('key');
+        let keyCode = document.getElementById('keyCode');
+        let body = document.querySelector('body');
+
+        body.addEventListener('keydown', (e) => {
+            keyName.innerHTML = '';
+            keyCode.innerHTML = '';
+            let keyMsg = `<h1>You pressed <span class='color'>${e.key}</span></h1>`;
+            keyName.innerHTML = keyMsg;
+            let keyCodeMsg = `<h1><span class='color'>${e.keyCode}</span></h1>`;
+            keyCode.innerHTML = keyCodeMsg;
+        })
+    </script>
+</body>
+
+</html>

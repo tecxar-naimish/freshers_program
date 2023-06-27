@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-15 Excercise-3</title>
+</head>
+
+<body>
+    <script>
+        ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
+        class Statistics {
+            constructor(arr) {
+                this.arr = arr;
+            }
+            count() {
+                return this.arr.length;
+            }
+
+            sum() {
+                let sum = 0;
+                this.arr.forEach((num) => {
+                    sum += num
+                })
+                return sum;
+            }
+
+            min() {
+                let minNum = this.arr[0];
+                for (let i = 0; i < this.arr.length; i++) {
+                    if (minNum > this.arr[i]) {
+                        minNum = this.arr[i];
+                    }
+                }
+                return minNum;
+            }
+
+            max() {
+                let maxNum = this.arr[0]
+                for (let i = 0; i < this.arr.length; i++) {
+                    if (this.arr[i] > maxNum) {
+                        maxNum = this.arr[i]
+                    }
+                }
+                return maxNum
+            }
+
+            range() {
+                return this.max() - this.min();
+            }
+
+            mean() {
+                return Math.ceil(this.sum() / this.arr.length)
+            }
+
+            median() {
+                let sorted = this.arr.sort();
+                let index = sorted.length / 2;
+                index = Math.floor(index);
+                return sorted[index];
+            }
+
+            mode() {
+                return Object.entries(this.arr.reduce((obj, cur) => {
+                    obj[cur] = (obj[cur] || 0) + 1;
+                    return obj;
+                }, {})).sort((a, b) => a[1] - b[1]).pop();
+            }
+            describe() {
+                return `
+                    Count: ${this.count()}\n
+                    Sum: ${this.sum()}\n 
+                    Min: ${this.min()}\n
+                    Max: ${this.max()}\n
+                    Range: ${this.range()}\n
+                    Mean: ${this.mean()}\n
+                    Median: ${this.median()}\n
+                    Mode: ${this.mode()}`
+            }
+        }
+        let statistics = new Statistics(ages);
+        console.log(statistics.describe());
+
+        //2
+
+        class PersonAccount {
+            constructor(fname, lname) {
+                this.fname = fname;
+                this.lname = lname;
+
+                this.accountBalance = 0;
+                this.incomes = [];
+                this.expenses = [];
+            }
+
+            totalIncome() {
+                let totalIncom = 0;
+                this.incomes.forEach(income => totalIncom += income);
+                return totalIncom;
+            }
+
+            totalExpense() {
+                let totalExpenses = 0;
+                this.expenses.forEach(expense => totalExpenses += expense)
+                return totalExpenses;
+            }
+
+            checkAccountBalance() {
+                return this.accountBalance;
+            }
+
+            accountInfo() {
+                return `
+                    *****Billing Account Info******
+                    Name: ${this.fname + ' ' + this.lname}
+                    Balance: ${this.accountBalance}
+                    Income: ${this.totalIncome()}
+                    Expense: ${this.totalExpense()}
+                    
+                    _________END OF INFO__________
+                    `
+            }
+            set addIncome(amount) {
+                this.incomes.push(amount)
+            }
+            
+            set addExpenses(cost) {
+                this.expenses.push(cost)
+            }
+        }
+
+        let myAccount = new PersonAccount('Naimish', 'Dhorajiya');
+        // myAccount.addIncome = 10000;
+        // myAccount.addExpenses = 6000;
+        console.log(myAccount.accountInfo());
+    </script>
+</body>
+
+</html>

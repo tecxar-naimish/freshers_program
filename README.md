@@ -1,1 +1,0 @@
-# freshers_program

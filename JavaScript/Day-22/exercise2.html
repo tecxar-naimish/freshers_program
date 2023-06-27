@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-22 Excercise-2</title>
+    <script src="./countries.js"></script>
+</head>
+
+<body>
+    <h2>World Countries List</h2>
+    <h4 id="total-countries"></h4>
+
+    <script>
+        let h2 = document.querySelector('h2');
+        h2.textContent = h2.textContent.toUpperCase();
+        h2.style.letterSpacing = '8px';
+        h2.style.textAlign = 'center';
+        h2.style.fontWeight = '600';
+        h2.style.margin = '0px';
+        h2.style.padding = '2px';
+        
+        let totalCountries = document.querySelector('#total-countries');
+        totalCountries.textContent = `Total Number of countries: ${countries.length}`;
+        totalCountries.style.textAlign = 'center';
+        totalCountries.style.fontWeight = '550';
+        totalCountries.style.margin = '0px';
+        totalCountries.style.padding = '2px';
+
+        // create table tag
+        let table = document.createElement('table');
+
+        // table styling     
+        table.style.textAlign = 'center';
+        table.style.padding = '2px';
+        table.style.width = '50%';
+        table.style.marginLeft = '20%'
+        table.style.fontSize = '7px';
+        table.style.letterSpacing = '1px';
+
+        // text add   
+        let countryCount = 0;
+        while (countryCount < countries.length) {
+            let row = document.createElement('tr');
+
+            for (let i = 0; i < 6; i++) {
+                if (countryCount == countries.length) {
+                    break;
+                }
+                let data = document.createElement('td');
+                data.textContent = countries[countryCount].toUpperCase();
+                data.style.paddingTop = '30px';
+                data.style.paddingBottom = '30px';
+                data.style.margin = '2px';
+                data.style.border = '1px solid black';
+                data.style.borderRadius = '10%';
+                data.style.backgroundColor = 'lightGray';
+
+                row.appendChild(data);
+                countryCount++;
+            }
+            table.appendChild(row);
+        }
+        let body = document.querySelector('body');
+        body.style.backgroundColor = 'orange';
+        document.body.appendChild(table);
+    </script>
+</body>
+
+</html>

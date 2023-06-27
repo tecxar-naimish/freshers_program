@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-22 Excercise-1</title>
+</head>
+
+<body>
+    <script>
+        let container = document.createElement('div');
+        let table = document.createElement('table');
+
+        let isPrime = (num) => {
+            if (num == 1 || num == 0) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i == 0)
+                    return false;
+            }
+            return true;
+        }
+
+        let nums = 0;
+        while (nums <= 101) {
+            let row = document.createElement('tr');
+
+            for (let x = 1; x <= 6; x++) {
+                // create table data   
+                let data = document.createElement('td');
+                data.textContent = nums;
+
+                // style the data element 
+                data.style.margin = '2px';
+                data.style.padding = '15px';
+                data.style.border = '2px solid black';
+
+                if (isPrime(nums)) {
+                    data.style.backgroundColor = 'red';
+                }
+                else if (nums % 2 !== 0) {
+                    data.style.backgroundColor = 'yellow';
+                }
+                else {
+                    data.style.backgroundColor = 'green';
+                }
+
+                // end styling   
+                row.appendChild(data);
+                nums++;
+            }
+            // add row to the table    
+            table.appendChild(row);
+        }
+
+        // table styling     
+        table.style.width = '60%';
+        table.style.marginRight = '20%';
+        table.style.marginLeft = '20%';
+        table.style.textAlign = 'center';
+        table.style.fontSize = '30px';
+        table.style.fontWeight = 'bold';
+        table.style.color = 'black';
+
+        container.appendChild(table);
+        document.body.appendChild(container);
+    </script>
+</body>
+
+</html>

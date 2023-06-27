@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-12 Excercise-3</title>
+</head>
+
+<body>
+    <script>
+        //1
+        sentence = `%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. There $is nothing; &as& mo@re rewarding as educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s mo@tivate yo@u to be a tea@cher!?`
+        let tenMostFrequentWords = (text, range = 10) => {
+            let pattern = /[a-z|A-Z]*/g;
+            return Object.entries(text.match(pattern).reduce((dict, word) => {
+                dict[word] = (dict[word] || 0) + 1;
+                return dict;
+            }, {})).sort((a, b) => b[1] - a[1]).slice(0, range);
+        }
+
+        let cleanText = (text) => {
+            let pattern = /[~|@|#|!|$|%|\^|&|;|\\?]/g;
+            let cleanedText = text.replace(pattern, '')
+            return tenMostFrequentWords(cleanedText);
+        }
+        console.log(cleanText(sentence));
+
+    </script>
+</body>
+
+</html>

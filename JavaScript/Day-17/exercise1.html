@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-17 Excercise-1</title>
+</head>
+
+<body>
+    <script>
+        //1
+        localStorage.setItem('firstName', 'Naimish');
+        localStorage.setItem('lastName', 'Dhorajiya');
+        localStorage.setItem('age', 22);
+        localStorage.setItem('country', 'India');
+        localStorage.setItem('city', 'Rajkot');
+
+        localStorage.clear();
+        //2
+        let person = {
+            firstName: 'Naimish',
+            lastName: 'Dhorajiya',
+            age: 22,
+            skills: ['HTML', 'CSS', 'JAVASCRIPT', 'REACT'],
+            country: 'India',
+            city: 'Rajkot',
+            enrolled: true,
+        }
+        let personData = JSON.stringify(person);
+        localStorage.setItem('Person', personData);
+
+        let data = localStorage.getItem('Person')
+        console.log("data......", JSON.parse(data))
+
+        //3
+
+        let personAccount = {
+            firstName: 'Naimish',
+            lastName: 'Dhorajiya',
+            incomes: [20000, 30000, 40000],
+            expenses: [10000, 2000, 8000],
+            totalIncome: function () {
+                return this.incomes.reduce((acc, curr) => acc + curr, 0);
+            },
+            totalExpense: function () {
+                return this.expenses.reduce((acc, curr) => acc + curr, 0);
+            },
+            accountBalance: function () {
+                return this.totalIncome() - this.totalExpense();
+            }
+        }
+
+        let personAccountData = JSON.stringify(personAccount);
+        localStorage.setItem('Person Account', personAccountData);
+
+    </script>
+</body>
+
+</html>

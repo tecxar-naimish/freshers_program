@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-05 Exercise-1</title>
+</head>
+
+<body>
+    <script>
+        //1
+
+        let arr = [];
+
+        //2
+        let arr1 = [1, 2, 3, 4, 5];
+
+        //3
+        console.log(arr1.length);
+
+        //4
+        let first = arr1[0];
+        let midle = arr1[parseInt(arr1.length / 2)];
+        let last = arr1[arr1.length - 1];
+
+        console.log(`First= ${first} \nMidle=${midle} \nLast=${last}`);
+
+        //9
+        let itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'];
+        console.log(itCompanies[0]);
+        console.log(itCompanies[parseInt(itCompanies.length / 2)]);
+        console.log(itCompanies[itCompanies.length - 1]);
+
+        //10
+        for (let i = 0; i < itCompanies.length; i++) {
+            console.log(itCompanies[i]);
+        }
+
+        //11
+        let upperCaseCompanies = itCompanies.map((i) => i.toUpperCase());
+        console.log(upperCaseCompanies);
+
+        //12
+        console.log(itCompanies.toString());
+
+        //13
+        if (itCompanies.includes('IBM')) {
+            console.log("IBM exists!");
+        } else console.log("IBM does not exist");
+
+        //14
+
+        //15
+        console.log(itCompanies.sort());
+
+        //16
+        console.log(itCompanies.reverse());
+
+        //17
+        console.log(itCompanies.slice(0, 3));
+
+        //18
+        len = itCompanies.length
+        let last3Companies = itCompanies.slice(len - 3, len);
+        console.log(`Last 3 Companies = ${last3Companies}`);
+
+        //19
+        let midCompany = itCompanies.slice(parseInt(itCompanies.length / 2));
+        console.log(midCompany);
+
+        //20
+        console.log(itCompanies.shift());
+
+        //21
+        let Companies = ['FACEBOOK', 'GOOGLE', 'MICROSOFT', 'APPLE', 'IBM', 'ORACLE', 'AMAZON'];
+        Companies.splice(parseInt(Companies.length / 2), 1); // IBM, GOOGLE gone!
+        console.log(Companies);
+
+        //22
+        Companies.splice(Companies.length - 1, 1);
+        console.log(Companies);
+
+        //23
+        Companies.splice(0, Companies.length);
+        console.log(Companies);
+    </script>
+</body>
+
+</html>

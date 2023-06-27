@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-22 Excercise-3</title>
+    <script src="./exercise3.js"></script>
+</head>
+
+<body>
+    <div class="wrapper"></div>
+    <script>
+        let wrapper = document.querySelector('.wrapper');
+
+        //heading
+        let h1 = document.createElement('h1');
+        h1.innerHTML = 'Javascript Challenge <span>2023</span>';
+        h1.style.textAlign = 'center';
+        h1.style.fontSize = '20px';
+        wrapper.appendChild(h1);
+
+        let yearTxt = document.querySelector('span');
+        yearTxt.style.fontSize = '50px';
+
+        //color change
+        let generateColor = () => {
+            let alphanums = '0123456789abcdef';
+
+            let colorArr = [];
+            for (let i = 0; i < 6; i++) {
+                let index = Math.floor(Math.random() * 15);
+                colorArr.push(alphanums[index]);
+            }
+            return '#' + colorArr.join('');
+        }
+
+        setInterval(() => {
+            yearTxt.style.color = generateColor();
+        }, 1000);
+
+        //
+        let list = document.createElement('ul');
+        list.style.listStyleType = 'none';
+        list.style.width = '80%';
+        list.style.margin = 'auto';
+
+
+        asabenehChallenges2020.challenges.forEach(x => {
+            let item = document.createElement('li');
+
+            // 1   
+            let titleSpan = document.createElement('span');
+            let title = document.createTextNode(x.name);
+            titleSpan.appendChild(title);
+
+            // 2   
+            let dropdown = document.createElement('details');
+            let dropdownSpan = document.createElement('span');
+
+            // modify detail   
+            let summary = document.createElement('summary');
+            summary.textContent = x.name.split(' ')[x.name.split(' ').length - 1];
+
+            // add the topics 
+            let topics = document.createElement('ul');
+
+            x.topics.forEach((i) => {
+                let item = document.createElement('li');
+                item.textContent = i;
+
+                topics.appendChild(item);
+
+                // styling    
+                item.style.padding = '5px';
+                item.style.width = '10%';
+            })
+
+            // styling   
+            topics.style.listStyleType = 'none';
+            topics.style.width = '80%';
+            topics.style.margin = 'auto';
+
+            dropdownSpan.appendChild(dropdown);
+            // 3 
+            let status = document.createTextNode(x.status);
+            let statusSpan = document.createElement('span');
+            statusSpan.appendChild(status);
+
+            // appends    
+            item.appendChild(titleSpan);
+            dropdown.appendChild(summary);
+            dropdown.appendChild(topics);
+            item.appendChild(dropdownSpan);
+            item.appendChild(statusSpan);
+            list.appendChild(item);
+
+            // styling     
+            item.style.border = '2px solid black';
+            item.style.display = 'flex';
+            item.style.justifyContent = 'space-between';
+            item.style.borderRadius = '10px';
+            item.style.backgroundColor = 'orange';
+            item.style.padding = '20px';
+            item.style.width = '90%';
+            item.style.marginTop = '3px';
+            item.style.marginBottom = '3px';
+        })
+
+        wrapper.appendChild(list);
+
+    </script>
+</body>
+
+</html>

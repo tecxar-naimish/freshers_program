@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-24 Exercise-1</title>
+    <style>
+        body {
+            background: url(Images/galaxy.gif);
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        input {
+            border-radius: 3px;
+            font-size: large;
+            padding: 5px;
+            text-align: center;
+        }
+
+        select {
+            font-size: large;
+            width: auto;
+            border-radius: 3px;
+            padding: 5px;
+            text-align: center;
+        }
+
+        button {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            border-radius: 3px;
+            padding: 5px;
+            font-size: large;
+        }
+
+        button:hover {
+            background-color: orange;
+            color: black;
+        }
+
+        .container {
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .big {
+            font-size: 50px;
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calculate a weight of an object on a Planet</h1>
+    <div>
+        <input type="text" placeholder="Mass in Kilogram">
+        <select>
+            <option disabled selected>---Select Planet---</option>
+            <option value="mercury">Mercury</option>
+            <option value="venus">Venus</option>
+            <option value="earth">Earth</option>
+            <option value="moon">Moon</option>
+            <option value="mars">Mars</option>
+            <option value="jupiter">Jupiter</option>
+            <option value="saturn">Saturn</option>
+            <option value="uranus">Uranus</option>
+            <option value="neptune">Neptune</option>
+            <option value="pluto">Pluto</option>
+        </select>
+        <button>Calculate weight</button>
+    </div>
+    <div class="container"></div>
+    <script src="./index.js"></script>
+</body>
+
+</html>

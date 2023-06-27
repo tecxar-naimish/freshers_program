@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-09 Excercise-3</title>
+    <script src="./countries.js"></script>
+</head>
+
+<body>
+    <script>
+
+        // 1 sort by name     
+        let sortedByName = countries.map(o => o.name);
+        // sortedByName.forEach(x => console.log(x));
+
+        // 1 sort by capital
+        let sortedByCapital = countries.sort((a, b) => a.capital.localeCompare(b.capital));
+        // sortedByCapital.forEach(o => console.log(o.capital));
+
+        // 1 sort by population 
+        let sortedByPopulation = countries.sort((a, b) => b.population - a.population);
+        // sortedByPopulation.forEach(x => console.log(x.population));
+
+        //2
+        let mostSpoken = Object.entries(countries.reduce((langs, obj) => {
+            obj.languages.forEach(x => langs.push(x));
+            return langs;
+        }, []).reduce((dict, lang) => {
+            dict[lang] = (dict[lang] || 0) + 1;
+            return dict;
+        }, {})).sort((a, b) => b[1] - a[1]);
+        mostSpoken.splice(0,10).forEach(x => console.log(x))
+
+        //3
+        function sortByMostPopulated(countries) {
+            let mostPopulated = countries.sort((a, b) => b.population - a.population);
+            let a = mostPopulated.slice(0, 10);
+            return a;
+        }
+        console.log(sortByMostPopulated(countries));
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-23 Exercise-1</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .wrapper {
+            width: 60%;
+            margin: auto;
+        }
+
+        .wrapper #response,
+        #input {
+            margin-left: 23%;
+            font-weight: 300;
+            color: red;
+            font-size: 0.6em;
+            margin-bottom: 1px;
+        }
+
+        #input #btn {
+            color: #000;
+            background-color: lightgreen;
+            margin-left: 2px;
+            padding: 10px;
+            border: 1px solid gray;
+            border-radius: 25px;
+        }
+
+        #input input {
+            border: 2px solid green;
+            border-radius: 4px;
+            padding: 10px;
+        }
+
+        #input #btn:hover {
+            color: white;
+            background-color: green;
+        }
+
+        #message {
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="response">
+            <p id='message'> </p>
+        </div>
+        <div id="input">
+            <span><input id='i1' type="number" placeholder="Enter a number..." /></span>
+            <span><input id='btn' type="button" value="Generate Numbers" /></span>
+        </div>
+    </div>
+
+    <script>
+        //Prime number
+        let isPrime = (num) => {
+            if (num == 1 || num == 0) {
+                return false;
+            }
+            if (num == 2 || num == 3) {
+                return true;
+            }
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        //error message
+        let msg = document.querySelector('#message');
+        let inputArea = document.querySelector('input');
+        inputArea.addEventListener('keydown', () => {
+            let val = parseInt(inputArea.value);
+            if (val < 0 || val > 1000) {
+                msg.innerHTML = 'Please enter a number between 1-1000!';
+            } else {
+                msg.innerHTML = '';
+            }
+        })
+
+        let container = document.createElement('div');
+        let table = document.createElement('table');
+
+        //generate number
+        let generateNumbers = (numCount) => {
+            nums = 0;
+            while (nums < numCount) {
+                let row = document.createElement('tr');
+                let iterationCount = numCount - nums > 6 ? 6 : numCount - nums;
+                for (let x = 1; x <= iterationCount; x++) {
+                    let data = document.createElement('td');
+                    data.textContent = nums;
+
+                    data.style.margin = '2px';
+                    data.style.padding = '10px';
+                    data.style.border = '2px solid black';
+                    data.style.borderRadius = '25px';
+                    data.style.fontSize = '30px';
+
+                    if (isPrime(nums)) {
+                        data.style.backgroundColor = 'red';
+                    } else if (nums % 2 !== 0) {
+                        data.style.backgroundColor = 'yellow';
+                    } else {
+                        data.style.backgroundColor = 'green';
+                    }
+                    
+                    row.appendChild(data);
+                    nums++;
+                }
+                table.appendChild(row);
+            }
+        }
+
+        let button = document.querySelector('#btn');
+
+        button.addEventListener('click', () => {
+            table.innerHTML = '';
+            let inputValue = parseInt(inputArea.value);
+
+            if (inputValue > 1000 || inputValue < 0) {
+                msg.textContent = 'Enter a valid number between 1 and 1000.';
+            }
+            else generateNumbers(inputValue);
+        })
+
+        // table style     
+        table.style.width = '60%';
+        table.style.marginLeft = '20%';
+        table.style.marginTop = '1px';
+        table.style.textAlign = 'center';
+        table.style.fontSize = '15px';
+        table.style.color = 'black';
+
+        container.appendChild(table);
+        document.body.appendChild(container);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+body {
+    text-align: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+main {
+    display: grid;
+}
+
+.main-titles {
+    background: #eddfde;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.main-titlemoji {
+    z-index: 1;
+    font-size: 30px;
+}
+
+.main-author-about {
+    font-size: 15px;
+    width: 90%;
+}
+
+.main-projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.main-projects {
+    width: 25%;
+    height: 180px;
+    background: #EDDFDE;
+    border: 2px ridge #eee;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.main-projects:hover {
+    background: lightblue;
+    border-color: black;
+    font-size: 30px;
+}
+
+.main-projects,
+.main-titlemoji {
+    display: grid;
+    place-items: center;
+    gap: 16px;
+}

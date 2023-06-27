@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-10 Excercise-3</title>
+    <script src="./countries.js"></script>
+</head>
+
+<body>
+    <script>
+        //1
+        let lang = countries.reduce((arr, cur) => {
+            arr = arr.concat(cur.languages);
+            return arr;
+        }, [])
+        let count = new Set(lang).size;
+        console.log(count);
+
+        //2
+        let mostSpoken = new Set(
+            Object.entries(countries.reduce((arr, obj) => (arr = arr.concat(obj.languages)), [])
+                .reduce((obj, name) => {
+                    obj[name] = (obj[name] || 0) + 1;
+                    return obj;
+                }, {})).sort((a, b) => b[1] - a[1])
+                .splice(0, 20)
+        );
+        console.log(mostSpoken);
+    </script>
+</body>
+
+</html>

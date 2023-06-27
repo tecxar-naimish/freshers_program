@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-21 Excercise-1</title>
+</head>
+
+<body>
+    <p class="txt1" id="gm">Good Morning..!!</p>
+    <p class="txt2" id="ga">Good Afternoon..!!</p>
+    <p class="txt3" id="ge">Good Evening..!!</p>
+    <p class="txt4" id="gn">Good Night..!!</p>
+    <script>
+        //1
+        let txt1 = document.querySelector('p')
+        console.log(txt1);
+
+        //2
+        let p1 = document.querySelector('#gm');
+        let p2 = document.querySelector('#ga');
+        let p3 = document.querySelector('#ge');
+        let p4 = document.querySelector('#gn');
+        console.log(`${p1}`);
+
+        //3
+        let allP = document.querySelectorAll('p');
+        console.log(allP);
+
+        //4
+        for (let i = 0; i < allP.length; i++) {
+            console.log(allP[i].textContent);
+        }
+
+        //5
+        p4.innerHTML = 'Fourth Paragraph';
+        console.log(p4.textContent)
+
+        //6
+        //method-1
+        allP.forEach(x => x.classList.add('paragraph'));
+
+        // method-2 
+        p1.setAttribute('class', 'first-paragraph');
+        p2.setAttribute('class', 'second-paragraph');
+
+        // method-3 
+        p3.className = 'third-paragraph';
+        p4.className = 'fourth-paragraph';
+
+
+        //Excercise-2
+        //1
+        let allParagraph = document.querySelectorAll('p');
+        allParagraph.forEach((i) => {
+            i.style.color = 'red';
+            i.style.backgroundColor = 'black';
+            i.style.fontSize = '20px';
+            i.style.border = '2px solid green';
+            i.style.borderRadius = '50%';
+            i.style.textAlign = 'center';
+        });
+
+        //2
+        for (let i = 0; i < allParagraph.length; i++) {
+            if (i % 2 == 0) {
+                allParagraph[i].style.color = 'green'
+            } else {
+                allParagraph[i].style.color = 'red'
+            }
+        }
+
+        //3
+        let a = 1;
+        for (let i of allParagraph) {
+            if (a == 1) {
+                i.textContent = `${a}st Pargraph!`;
+            } else if (a === 2) {
+                i.textContent = `${a}nd Paragraph`;
+            } else if (a == 3) {
+                i.textContent = `${a}rd Pargraphs`;
+            } else
+                i.textContent = `${a}th Paragraph!`;
+
+            i.setAttribute('id', `${a}-paragraph`);
+            i.setAttribute('class', 'Paragraph');
+            a++;
+        }
+    </script>
+</body>
+
+</html>

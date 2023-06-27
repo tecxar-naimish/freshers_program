@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-19 Excercise</title>
+</head>
+
+<body>
+    <script>
+
+        //1
+        let first = (num1) => {
+            let second = (num2) => {
+                return num1 * num2;
+            }
+            return second;
+        }
+        let result = first(2);
+        let fullResult = result(3);
+        console.log(fullResult);
+
+        //2
+        let arithmeticOperation = (num) => {
+            let add = () => {
+                // num = num + 2
+                return num += 2;
+            }
+            let sub = () => {
+                return num -= 2;
+            }
+            let multi = () => {
+                return num *= 2;
+            }
+            return {
+                add: add(),
+                sub: sub(),
+                multi: multi()
+            }
+        }
+        let operation = arithmeticOperation(2);
+
+        console.log(operation.add);
+        console.log(operation.sub);
+        console.log(operation.multi);
+
+        //3
+        let personAccount = () => {
+            let firstName = "Naimish";
+            let lastName = "Dhorajiya";
+            let incomes = [20000, 10000];
+            let expenses = [6000];
+
+            let addIncome = (income) => {
+                incomes.push(income)
+                return income;
+            }
+
+            let addExpense = (expense) => {
+                expenses.push(expense);
+                return expenses;
+            }
+
+            let totalIncome = () => {
+                let TI = 0;
+                let TE = 0;
+                incomes.forEach((income) => {
+                    TI += income
+                })
+                expenses.forEach((expense) => {
+                    TE += expense
+                })
+                let result = TI - TE;
+                return result;
+            }
+
+            let totalExpense = () => {
+                let TE = 0;
+                expenses.forEach((expense) => {
+                    TE += expense
+                })
+                return TE
+            }
+
+            let accountBalance = () => {
+                totalIncome();
+            }
+
+            let accountInfo = () => {
+                return `Name:${firstName} ${lastName} \nIncomes:${incomes} \nExpenses:${expenses} \nBalance:${totalIncome()}`
+            }
+
+            return {
+                addIncome: addIncome(20000),
+                addExpense: addExpense(4000),
+                totalIncome: totalIncome(),
+                totalExpense: totalExpense(),
+                accountBalance: accountBalance(),
+                accountInfo: accountInfo()
+            }
+        }
+
+        const accFunc = personAccount();
+        console.log(accFunc.accountInfo);
+
+    </script>
+</body>
+
+</html>
